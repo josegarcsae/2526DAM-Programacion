@@ -20,5 +20,10 @@ public class Fechas {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         System.out.println("Fecha formateada: " + formato.format(fechaCompleta));
 
+        LocalDateTime f = LocalDateTime.now();
+        DateTimeFormatter ff = DateTimeFormatter.ofPattern("'hoy es' dd/MM/yyyy HH:mm");
+        System.out.println(f.format(ff));
+
+
     }
 }
