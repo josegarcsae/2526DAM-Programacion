@@ -8,16 +8,25 @@ public class MainFiguras {
         Cuadrado cuadrado = new Cuadrado(5);
         System.out.println(cuadrado);
 
-        Circulo circulo1 = new Circulo(3);
-        System.out.println(circulo1);
-        System.out.println(circulo1.area());
+        Circulo circulo = new Circulo(3);
+        System.out.println(circulo);
+        System.out.println(circulo.area());
 
-        Figura circuloCamuflado = (Figura) circulo1;
+        Figura circuloCamuflado = (Figura) circulo;
         System.out.println(circuloCamuflado.perimetro());
 
         Figura[] figuras = new Figura[4];
         figuras[0] = cuadrado;
-        figuras[1] = circuloCamuflado;
+        figuras[1] = circulo;
+        for (int i = 0; i < figuras.length; i++) {
+            Figura f =  figuras[i];
+            if (f instanceof Circulo) {
+//                Circulo c = (Circulo) f;
+//                c.botar();
+                ((Circulo) f).botar();
+            }
+
+        }
 
     }
 }

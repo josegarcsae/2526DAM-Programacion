@@ -20,4 +20,9 @@ public class Circulo extends Figura {
     public String area() {
         return "circulo de area " + Math.PI * this.radio * this.radio;
     }
+
+    public void botar() {
+        System.out.println("Botando la pelota");
+    }
+
 }
