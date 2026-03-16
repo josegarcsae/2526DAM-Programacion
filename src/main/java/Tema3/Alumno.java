@@ -1,5 +1,7 @@
 package Tema3;
 
+import java.util.Objects;
+
 public class Alumno {
 
     private String nombre;
@@ -9,6 +11,11 @@ public class Alumno {
     public Alumno(String nombre, String apellidos) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+    }
+
+    public Alumno(String nombre, String apellidos, int numMatricula) {
+        this(nombre, apellidos);
+        this.numMatricula = numMatricula;
     }
 
     public String toString() {
@@ -31,5 +38,16 @@ public class Alumno {
 
     public void setNumMatricula(int numMatricula) {
         this.numMatricula = numMatricula;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Alumno alumno)) return false;
+        return numMatricula == alumno.numMatricula;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(numMatricula);
     }
 }
