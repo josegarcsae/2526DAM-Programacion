@@ -23,11 +23,32 @@ public class Producto implements Comparable<Producto> {
 
     // --- TAREA DEL ALUMNO 1 ---
     // Implementar equals y hashCode basándose en el 'id'.
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Producto producto)) return false;
+        return Double.compare(precio, producto.precio) == 0 && Objects.equals(id, producto.id) && Objects.equals(modelo, producto.modelo);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
 
     // --- TAREA DEL ALUMNO 2 ---
     // Implementar compareTo para que la ordenación por defecto sea por ID.
     @Override
     public int compareTo(Producto otro) {
-        return 0; // Cambiar esto
+        return this.id.compareTo(otro.getId()); // Cambiar esto
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 }

@@ -28,6 +28,13 @@ public class Alumno implements Comparable<Alumno> {
 
     @Override
     public int compareTo(Alumno o) {
+//        if (this.fechaNacimiento.isBefore(o.fechaNacimiento)) {
+//            return -1;
+//        }
+//        if (this.fechaNacimiento.isAfter(o.fechaNacimiento)) {
+//            return 1;
+//        }
+//        return 0;
         return this.fechaNacimiento.compareTo(o.fechaNacimiento);
     }
 }
